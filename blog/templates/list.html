@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<html>
+<head>
+	<title>List</title>
+	<link rel ="stylesheet" type="text/css" href="{%static 'css/custom.css' %}">
+</head>
+<body>
+{% for post in posts %}
+Title: <a href="{% url 'post_details' post.pk %}" >{{ post.title }}</a>
+
+<a href="{% url 'post_delete' post.pk%}"> Delete</a>
+
+
+ <br><br>
+	{% endfor %}
+
+
+
+</body>
+
+</html>
